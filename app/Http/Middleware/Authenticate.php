@@ -3,10 +3,13 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Contracts\Auth\Factory as Auth;
 
 class Authenticate
 {
+    private const TOKEN_HEADER = 'X-token';
+    private const TOKEN = 'sababa';
     /**
      * The authentication guard factory instance.
      *
@@ -35,10 +38,8 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if ($this->auth->guard($guard)->guest()) {
-            return response('Unauthorized.', 401);
-        }
-
-        return $next($request);
+        return $request->header(self::TOKEN_HEADER) === self::TOKEN
+            ? $next($request)
+            : new JsonResponse(null, 401);
     }
 }

@@ -12,7 +12,6 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->group(['middleware' => 'auth'], function ($router) {
+    $router->post('/create', ['as' => 'create', 'uses' => 'ProductsController@create']);
 });
