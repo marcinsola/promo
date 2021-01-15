@@ -12,6 +12,6 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-$router->group(['middleware' => 'auth'], function ($router) {
+$router->group(['middleware' => ['auth', 'jsonRequest']], function ($router) {
     $router->post('/create', ['as' => 'create', 'uses' => 'ProductsController@create']);
 });
