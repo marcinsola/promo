@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\ValidationServiceProvider;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -96,6 +98,7 @@ $app->routeMiddleware([
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(\Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 $app->register(Jenssegers\Mongodb\MongodbServiceProvider::class);
+$app->register(ValidationServiceProvider::class);
 
 $app->withEloquent();
 
