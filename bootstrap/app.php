@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\PromoApiServiceProvider;
 use App\Providers\RepositoryServiceProvider;
 use App\Providers\ValidationServiceProvider;
 
@@ -62,6 +63,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+$app->configure('promo_api');
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +102,7 @@ $app->routeMiddleware([
 $app->register(\Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 $app->register(Jenssegers\Mongodb\MongodbServiceProvider::class);
 $app->register(RepositoryServiceProvider::class);
+$app->register(PromoApiServiceProvider::class);
 $app->register(ValidationServiceProvider::class);
 
 $app->withEloquent();
