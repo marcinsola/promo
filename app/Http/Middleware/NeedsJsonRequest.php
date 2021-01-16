@@ -18,6 +18,6 @@ class NeedsJsonRequest
     {
         return $request->isJson()
             ? $next($request)
-            : new JsonResponse(null, 400);
+            : new JsonResponse(['error' => 'Request has to be a JSON object'], 400);
     }
 }
