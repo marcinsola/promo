@@ -2,6 +2,6 @@
 
 namespace App\Validators;
 
-interface ProductValidatorInterface
+interface ProductValidatorInterface extends ValidatorInterface
 {
 }
