@@ -3,7 +3,6 @@
 namespace App\Filters;
 
 use App\Models\Product;
-use App\Filters\ProductFilterInterface;
 use Jenssegers\Mongodb\Eloquent\Builder;
 
 class ProductFilter extends BaseFilter implements ProductFilterInterface
