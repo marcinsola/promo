@@ -14,4 +14,5 @@
 */
 $router->group(['middleware' => ['auth', 'jsonRequest']], function ($router) {
     $router->post('/create', ['as' => 'create', 'uses' => 'ProductsController@create']);
+    $router->get('/search', ['as' => 'search', 'uses' => 'ProductsController@search']);
 });
