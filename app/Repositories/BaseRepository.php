@@ -6,7 +6,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
 
 abstract class BaseRepository implements RepositoryInterface
 {
-    private Model $model;
+    protected Model $model;
 
     public function __construct(Model $model)
     {
