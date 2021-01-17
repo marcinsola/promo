@@ -97,6 +97,7 @@ $app->register(Jenssegers\Mongodb\MongodbServiceProvider::class);
 $app->register(App\Providers\RepositoryServiceProvider::class);
 $app->register(App\Providers\PromoApiServiceProvider::class);
 $app->register(App\Providers\ValidationServiceProvider::class);
+$app->register(App\Providers\FilterServiceProvider::class);
 
 $app->withEloquent();
 
