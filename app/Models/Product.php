@@ -6,11 +6,13 @@ use Jenssegers\Mongodb\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $primaryKey = 'id';
+    protected $connection = 'mongodb';
 
     protected $fillable = [
-        'id',
+        'product_id',
         'name',
+        'price',
+        'description',
         'colors',
         'sizes',
     ];
